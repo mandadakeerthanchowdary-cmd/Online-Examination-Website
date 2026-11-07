@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Examination Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-icon">✦</span> Exam<span>Portal</span></div>
+    <div class="top-note">STUDENT EXAMINATION SYSTEM</div>
+  </header>
+
+  <main class="container">
+    <section id="loginView" class="card login-card">
+      <div class="eyebrow">WELCOME TO YOUR EXAM</div>
+      <h1>Online Examination</h1>
+      <p class="muted">Sign in with your student details to begin the assessment.</p>
+      <form id="loginForm">
+        <label for="studentName">Student name</label>
+        <input id="studentName" type="text" placeholder="Enter your full name" required>
+        <label for="studentId">Student ID</label>
+        <input id="studentId" type="text" placeholder="Enter your student ID" required>
+        <button class="primary full" type="submit">Continue to instructions <span>→</span></button>
+      </form>
+      <div id="loginError" class="error" role="alert"></div>
+      <div class="secure-note">🔒 Your exam session is ready to start after login.</div>
+    </section>
+
+    <section id="instructionsView" class="card hidden">
+      <div class="eyebrow">BEFORE YOU BEGIN</div>
+      <h1>Exam instructions</h1>
+      <p class="muted">Please read the following instructions carefully.</p>
+      <div class="info-grid">
+        <div class="info-box"><strong>05</strong><span>Questions</span></div>
+        <div class="info-box"><strong>05:00</strong><span>Time limit</span></div>
+        <div class="info-box"><strong>05</strong><span>Maximum marks</span></div>
+      </div>
+      <ul class="instructions">
+        <li>Each question has four options. Select one answer.</li>
+        <li>Each correct answer carries 1 mark. There is no negative marking.</li>
+        <li>The countdown begins when you click Start Examination.</li>
+        <li>The exam will be submitted automatically when the timer reaches zero.</li>
+        <li>You can submit the exam before the time ends using the Submit button.</li>
+      </ul>
+      <button id="startBtn" class="primary full">Start Examination <span>→</span></button>
+    </section>
+
+    <section id="examView" class="hidden">
+      <div class="exam-heading">
+        <div><div class="eyebrow">ONLINE ASSESSMENT</div><h1>Web Technology Quiz</h1><p id="studentWelcome" class="muted"></p></div>
+        <div class="timer-card"><span>TIME REMAINING</span><strong id="timer">05:00</strong></div>
+      </div>
+      <div class="progress-wrap"><div class="progress-label"><span>Exam progress</span><span id="progressText">0 of 5 answered</span></div><div class="progress-track"><div id="progressBar"></div></div></div>
+      <form id="examForm">
+        <div id="questionsContainer"></div>
+        <div class="submit-row">
+          <span class="muted small">Review your answers before submitting.</span>
+          <button type="submit" class="primary">Submit Examination</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="resultView" class="card result-card hidden">
+      <div class="result-icon">✓</div>
+      <div class="eyebrow">EXAM COMPLETED</div>
+      <h1>Your result</h1>
+      <p id="resultStudent" class="muted"></p>
+      <div class="score-circle"><strong id="score">0/5</strong><span>YOUR SCORE</span></div>
+      <div class="result-stats">
+        <div><strong id="percentage">0%</strong><span>Percentage</span></div>
+        <div><strong id="attempted">0/5</strong><span>Attempted</span></div>
+        <div><strong id="correct">0</strong><span>Correct answers</span></div>
+      </div>
+      <p id="resultMessage" class="result-message"></p>
+      <button id="restartBtn" class="secondary full">Back to Login</button>
+    </section>
+  </main>
+  <footer>Online Examination Portal · Academic project</footer>
+  <script src="script.js"></script>
+</body>
+</html>
